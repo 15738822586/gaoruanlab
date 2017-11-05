@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include "menu.h"
+
+void Quit(int argc, char *argv[]);
+void Version(int argc, char *argv[]);
+
+
+void Quit(int argc, char *argv[])
+{
+    exit(0);
+}
+
+void Version(int argc, char *argv[])
+{
+    printf("version1.0\n");
+}
+
+
+int main(int argc,char* argv[])
+{
+    MenuConfig("version","XXX1.0(Menu program v1.0)",NULL);
+    MenuConfig("quit","Quit",Quit);
+    
+
+    ExecuteMenu();
+}
